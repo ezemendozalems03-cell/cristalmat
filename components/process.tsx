@@ -7,10 +7,10 @@ import { Reveal } from './reveal'
 const steps = [
   { n: '01', title: 'Asesoramiento', desc: 'Analizamos tu terreno, uso y objetivos sin compromiso.' },
   { n: '02', title: 'Presupuesto', desc: 'Propuesta clara con materiales, plazos y costos definidos.' },
-  { n: '03', title: 'Fabricación', desc: 'Producimos las piezas en nuestra planta con control de calidad.' },
-  { n: '04', title: 'Entrega', desc: 'Coordinamos logística y envío a todo el país.' },
-  { n: '05', title: 'Colocación', desc: 'Equipo propio o guía técnica para una instalación perfecta.' },
-  { n: '06', title: 'Resultado final', desc: 'Un espacio que drena, resiste y se ve impecable por décadas.' },
+  { n: '03', title: 'Preparación', desc: 'Coordinamos y preparamos los materiales para tu proyecto.' },
+  { n: '04', title: 'Entrega', desc: 'Coordinamos la logística y el envío según tu zona.' },
+  { n: '05', title: 'Colocación', desc: 'Te asesoramos o coordinamos la colocación según disponibilidad.' },
+  { n: '06', title: 'Resultado final', desc: 'Un espacio resistente, funcional y con una terminación impecable.' },
 ]
 
 export function Process() {
@@ -26,7 +26,7 @@ export function Process() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <span className="font-display text-xs uppercase tracking-[0.3em] text-[var(--green-light)]">
-            (04) — Proceso
+            (10) — Proceso
           </span>
           <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold leading-[1.02] tracking-tight text-balance sm:mt-5 sm:text-4xl md:text-6xl">
             De la idea al resultado, sin sobresaltos

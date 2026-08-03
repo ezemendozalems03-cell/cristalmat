@@ -2,12 +2,18 @@ import { LoadingScreen } from '@/components/loading-screen'
 import { CustomCursor } from '@/components/custom-cursor'
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
-import { WhyChoose } from '@/components/why-choose'
 import { WordSeparator } from '@/components/word-separator'
+import { Products } from '@/components/products'
+import { GardenBlocks } from '@/components/garden-blocks'
+import { WhyChoose } from '@/components/why-choose'
+import { Calculator } from '@/components/calculator'
 import { Projects } from '@/components/projects'
 import { BeforeAfter } from '@/components/before-after'
+import { Atermicos } from '@/components/atermicos'
+import { WallPanel } from '@/components/wall-panel'
+import { MoreProducts } from '@/components/more-products'
 import { Process } from '@/components/process'
-import { Stats } from '@/components/stats'
+import { Values } from '@/components/values'
 import { About } from '@/components/about'
 import { Testimonials } from '@/components/testimonials'
 import { Faq } from '@/components/faq'
@@ -22,18 +28,24 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
-        <WordSeparator word="DISEÑO" />
-        <WhyChoose />
+        <WordSeparator word="HORMIGÓN" />
+        <Products />
+        <GardenBlocks />
         <WordSeparator word="RESISTENCIA" />
+        <WhyChoose />
+        <Calculator />
         <Projects />
         <BeforeAfter />
+        <WordSeparator word="NATURALEZA" />
+        <Atermicos />
+        <WallPanel />
+        <MoreProducts />
         <Process />
-        <Stats />
-        <WordSeparator word="DRENAJE" />
+        <Values />
+        <WordSeparator word="DISEÑO" />
         <About />
         <Testimonials />
         <Faq />
-        <WordSeparator word="CALIDAD" />
         <CtaFooter />
       </main>
       <FloatingActions />

@@ -23,7 +23,7 @@ export function BeforeAfter() {
         <div className="mb-8 flex flex-col justify-between gap-4 sm:mb-12 sm:gap-6 md:flex-row md:items-end">
           <Reveal>
             <span className="font-display text-xs uppercase tracking-[0.3em] text-primary">
-              (03) — Transformación
+              (06) — Transformación
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold leading-[1.02] tracking-tight text-foreground text-balance sm:mt-5 sm:text-4xl md:text-6xl">
               Antes y después
@@ -31,7 +31,7 @@ export function BeforeAfter() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Deslizá para ver la transformación real de un terreno anegado a un acceso premium y drenante.
+              Deslizá para ver la transformación de un terreno de tierra a un acceso premium con Garden Blocks.
             </p>
           </Reveal>
         </div>
@@ -49,8 +49,8 @@ export function BeforeAfter() {
             style={{ touchAction: 'none' }}
           >
             <img
-              src="/images/after.png"
-              alt="Acceso terminado con Garden Blocks"
+              src="/images/garden-blocks-driveway-after.jpg"
+              alt="Acceso terminado con Garden Blocks de Cristalmat"
               className="absolute inset-0 h-full w-full object-cover"
               draggable={false}
             />
@@ -60,8 +60,8 @@ export function BeforeAfter() {
 
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
               <img
-                src="/images/before.png"
-                alt="Terreno antes de la obra, con barro y agua acumulada"
+                src="/images/garden-blocks-driveway-before.jpg"
+                alt="Acceso de tierra antes de la obra con Garden Blocks"
                 className="absolute inset-0 h-full w-full object-cover"
                 style={{ width: containerRef.current?.offsetWidth ?? '100%', maxWidth: 'none' }}
                 draggable={false}

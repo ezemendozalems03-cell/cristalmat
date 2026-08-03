@@ -6,11 +6,14 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
 const links = [
-  { label: 'Beneficios', href: '#beneficios' },
+  { label: 'Inicio', href: '#top' },
+  { label: 'Productos', href: '#productos' },
+  { label: 'Garden Blocks', href: '#garden-blocks' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Proceso', href: '#proceso' },
+  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Preguntas frecuentes', href: '#faq' },
+  { label: 'Contacto', href: '#contacto' },
 ]
 
 export function Navbar() {
@@ -46,12 +49,12 @@ export function Navbar() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex lg:gap-9">
+        <nav className="hidden items-center gap-4 xl:flex xl:gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className="group relative whitespace-nowrap text-[13px] font-medium text-white/70 transition-colors hover:text-white"
             >
               {l.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--green-light)] transition-all duration-300 group-hover:w-full" />
@@ -61,14 +64,14 @@ export function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-[var(--green-dark)] transition-colors hover:bg-[var(--green-light)] md:inline-flex lg:px-6 lg:py-2.5"
+          className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-[var(--green-dark)] transition-colors hover:bg-[var(--green-light)] lg:inline-flex lg:px-6 lg:py-2.5"
         >
           Solicitar presupuesto
         </a>
 
         <button
           onClick={() => setOpen(true)}
-          className="flex flex-shrink-0 items-center justify-center rounded-full p-2 transition-colors hover:bg-white/10 md:hidden"
+          className="flex flex-shrink-0 items-center justify-center rounded-full p-2 transition-colors hover:bg-white/10 lg:hidden"
           aria-label="Abrir menú"
         >
           <Menu className="h-6 w-6 text-white" />
@@ -83,7 +86,7 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 flex flex-col bg-[var(--green-dark)] px-5 py-5 text-white md:hidden"
+            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[var(--green-dark)] px-5 py-5 text-white lg:hidden"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -101,7 +104,7 @@ export function Navbar() {
               </button>
             </div>
 
-            <nav className="mt-12 flex flex-col gap-1">
+            <nav className="mt-8 flex flex-col gap-0.5">
               {links.map((l, i) => (
                 <motion.a
                   key={l.href}
@@ -109,8 +112,8 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, x: -24 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                  className="rounded-2xl border-b border-white/10 py-5 font-display text-3xl font-medium tracking-tight transition-colors hover:text-[var(--green-light)]"
+                  transition={{ delay: 0.05 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="rounded-2xl border-b border-white/10 py-3.5 font-display text-xl font-medium tracking-tight transition-colors hover:text-[var(--green-light)]"
                 >
                   {l.label}
                 </motion.a>
@@ -123,7 +126,7 @@ export function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-auto rounded-2xl bg-white px-6 py-4 text-center text-base font-semibold text-[var(--green-dark)] transition-colors hover:bg-[var(--green-light)]"
+              className="mt-6 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-base font-semibold text-[var(--green-dark)] transition-colors hover:bg-[var(--green-light)]"
             >
               Solicitar presupuesto
             </motion.a>

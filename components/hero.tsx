@@ -6,9 +6,9 @@ import { useRef } from 'react'
 import { MagneticButton } from './magnetic-button'
 
 const bullets = [
-  'Más de 850 proyectos realizados',
-  'Material de fabricación propia',
-  'Envíos a todo el país',
+  'Garden Blocks aptos para tránsito vehicular',
+  'Premoldeados de hormigón resistentes',
+  'Pisos atérmicos, Wall Panel y deck de PVC',
   'Asesoramiento personalizado',
 ]
 
@@ -25,8 +25,8 @@ export function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
-  const words = ['No', 'construimos', 'pisos.']
-  const words2 = ['Construimos', 'espacios', 'que', 'duran', 'décadas.']
+  const words = ['Soluciones', 'en', 'hormigón']
+  const words2 = ['que', 'transforman', 'tus', 'espacios.']
 
   return (
     <section ref={ref} id="top" className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-[var(--green-dark)]">
@@ -108,8 +108,8 @@ export function Hero() {
               transition={{ delay: 1.5, duration: 1 }}
               className="mt-4 max-w-xl text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base md:text-lg"
             >
-              Soluciones premium para exteriores con máxima resistencia, drenaje natural y diseño
-              que perdura en el tiempo.
+              Garden Blocks, pisos atérmicos y revestimientos diseñados para combinar resistencia,
+              funcionalidad y estética.
             </motion.p>
 
             <motion.div
@@ -118,12 +118,12 @@ export function Hero() {
               transition={{ delay: 1.7, duration: 0.8 }}
               className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4"
             >
-              <MagneticButton href="#contacto" variant="light">
-                Solicitar presupuesto
+              <MagneticButton href="#productos" variant="light">
+                Ver productos
                 <ArrowUpRight className="h-4 w-4" />
               </MagneticButton>
-              <MagneticButton href="#proyectos" variant="outline" className="text-white">
-                Ver proyectos
+              <MagneticButton href="#calculadora" variant="outline" className="text-white">
+                Calcular mi proyecto
               </MagneticButton>
             </motion.div>
           </div>

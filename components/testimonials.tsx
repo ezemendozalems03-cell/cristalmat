@@ -64,7 +64,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
         <Reveal>
           <span className="font-display text-xs uppercase tracking-[0.3em] text-primary">
-            (06) — Testimonios
+            (13) — Testimonios
           </span>
           <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold leading-[1.02] tracking-tight text-foreground text-balance sm:mt-5 sm:text-4xl md:text-6xl">
             Lo que dicen quienes ya confiaron

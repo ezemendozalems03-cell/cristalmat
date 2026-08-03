@@ -4,29 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Plus } from 'lucide-react'
 import { useState } from 'react'
 import { Reveal } from './reveal'
-
-const faqs = [
-  {
-    q: '¿Resisten tránsito pesado?',
-    a: 'Sí. Nuestros Garden Blocks se fabrican en hormigón vibrocomprimido de alta densidad, preparado para soportar el paso continuo de autos, camionetas y utilitarios. Para tránsito pesado específico recomendamos una base compactada acorde, que definimos en el asesoramiento.',
-  },
-  {
-    q: '¿Necesitan mantenimiento?',
-    a: 'Prácticamente no. Al ser un sistema permeable no acumulan agua ni barro, por lo que no requieren mantenimiento anual. Basta con el corte del césped en las piezas verdes y una limpieza ocasional.',
-  },
-  {
-    q: '¿Cómo drenan el agua?',
-    a: 'El agua se filtra por las juntas y celdas del sistema directamente hacia el suelo, recargando la napa y evitando anegamientos. Es una solución sustentable que elimina la necesidad de desagües adicionales.',
-  },
-  {
-    q: '¿Se pueden colocar sobre tierra?',
-    a: 'Se colocan sobre una base preparada (generalmente arena y material granular compactado) que garantiza estabilidad y drenaje. En el asesoramiento definimos la base ideal según el uso y el tipo de suelo.',
-  },
-  {
-    q: '¿Realizan envíos?',
-    a: 'Sí, realizamos envíos a todo el país. Coordinamos la logística según el volumen del proyecto y tu ubicación, con opciones de colocación por equipo propio o guía técnica.',
-  },
-]
+import { faqs } from '@/lib/data'
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0)
@@ -36,7 +14,7 @@ export function Faq() {
       <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <span className="font-display text-xs uppercase tracking-[0.3em] text-primary">
-            (07) — Preguntas frecuentes
+            (14) — Preguntas frecuentes
           </span>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:mt-5 sm:text-4xl md:text-5xl">
             Todo lo que necesitás saber

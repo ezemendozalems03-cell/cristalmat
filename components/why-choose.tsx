@@ -1,39 +1,39 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Droplets, ShieldCheck, Waves, Car, LayoutGrid, Timer } from 'lucide-react'
+import { Droplets, ShieldCheck, Sprout, Car, LayoutGrid, Timer } from 'lucide-react'
 import { Reveal, Stagger, StaggerItem } from './reveal'
 
 const features = [
   {
-    icon: Droplets,
-    title: 'Drenaje natural',
-    desc: 'El agua se filtra directamente al suelo, recargando la napa y evitando anegamientos.',
-  },
-  {
     icon: ShieldCheck,
-    title: 'Mayor resistencia',
-    desc: 'Hormigón vibrocomprimido de alta densidad, preparado para cargas exigentes.',
-  },
-  {
-    icon: Waves,
-    title: 'No acumula agua',
-    desc: 'Superficie permeable que elimina charcos, barro y erosión del terreno.',
+    title: 'Resistencia y durabilidad',
+    desc: 'Fabricados en hormigón, pensados para resistir el uso diario durante años.',
   },
   {
     icon: Car,
-    title: 'Ideal para vehículos',
-    desc: 'Soporta el tránsito diario de autos y camionetas sin deformarse ni hundirse.',
+    title: 'Aptos para alto tránsito',
+    desc: 'Soportan el tránsito vehicular en accesos, cocheras y estacionamientos sin deformarse.',
   },
   {
-    icon: LayoutGrid,
-    title: 'Diseño moderno',
-    desc: 'Estética limpia y verde que integra la arquitectura con el paisaje.',
+    icon: Sprout,
+    title: 'Estética natural',
+    desc: 'Integran el verde del césped con una superficie transitable, sin perder presencia natural.',
+  },
+  {
+    icon: Droplets,
+    title: 'Reducción de la erosión',
+    desc: 'Ayudan a estabilizar el terreno y reducir la erosión frente al paso frecuente.',
   },
   {
     icon: Timer,
-    title: 'Rápida colocación',
-    desc: 'Sistema modular que reduce tiempos de obra y costos de mano de obra.',
+    title: 'Fácil instalación',
+    desc: 'Sistema modular que simplifica la colocación y reduce los tiempos de obra.',
+  },
+  {
+    icon: LayoutGrid,
+    title: 'Diseño para exteriores',
+    desc: 'Ideales para accesos, cocheras, estacionamientos y parques que buscan funcionalidad y diseño.',
   },
 ]
 
@@ -44,7 +44,7 @@ export function WhyChoose() {
         <div className="grid gap-6 sm:gap-8 md:grid-cols-[1fr_1fr] md:items-end">
           <Reveal>
             <span className="font-display text-xs uppercase tracking-[0.3em] text-primary">
-              (01) — Beneficios
+              (03) — Beneficios
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold leading-[1.02] tracking-tight text-foreground text-balance sm:mt-5 sm:text-4xl md:text-6xl">
               ¿Por qué elegir Garden Blocks?
@@ -52,8 +52,8 @@ export function WhyChoose() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
-              No es solo un piso. Es un sistema pensado por ingenieros para durar, drenar y verse
-              impecable temporada tras temporada.
+              No es solo un piso. Es un sistema pensado para resistir el uso diario y verse
+              impecable, integrando el césped a una superficie transitable.
             </p>
           </Reveal>
         </div>

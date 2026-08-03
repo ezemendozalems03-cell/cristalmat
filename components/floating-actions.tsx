@@ -3,6 +3,9 @@
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'motion/react'
 import { ArrowUp, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import { buildWhatsAppUrl } from '@/lib/whatsapp'
+
+const waMessage = 'Hola Cristalmat, quiero hacer una consulta.'
 
 export function FloatingActions() {
   const [showTop, setShowTop] = useState(false)
@@ -32,7 +35,7 @@ export function FloatingActions() {
       </AnimatePresence>
 
       <motion.a
-        href="https://wa.me/5490000000000"
+        href={buildWhatsAppUrl(waMessage)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Escribinos por WhatsApp"

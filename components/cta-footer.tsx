@@ -1,14 +1,30 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { ArrowUpRight, MapPin, Phone, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, MapPin, MessageCircle } from 'lucide-react'
 import { MagneticButton } from './magnetic-button'
 import { Reveal } from './reveal'
+import { contactInfo } from '@/lib/data'
+import { buildWhatsAppUrl } from '@/lib/whatsapp'
+
+// lucide-react no incluye íconos de marcas — trazo mínimo del glifo de Instagram.
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+const contactWaMessage = 'Hola Cristalmat, quiero hacer una consulta.'
+const mapsQuery = encodeURIComponent(contactInfo.address)
 
 const contactItems = [
-  { icon: MessageCircle, label: 'WhatsApp', value: '+54 9 000 000-0000', href: 'https://wa.me/5490000000000' },
-  { icon: Phone, label: 'Teléfono', value: '+54 000 000-0000', href: 'tel:+540000000000' },
-  { icon: MapPin, label: 'Dirección', value: 'Ruta 000 km 00, Buenos Aires', href: '#' },
+  { icon: MessageCircle, label: 'WhatsApp', value: contactInfo.whatsappDisplay, href: buildWhatsAppUrl(contactWaMessage) },
+  { icon: InstagramIcon, label: 'Instagram', value: contactInfo.instagramHandle, href: contactInfo.instagramUrl },
+  { icon: MapPin, label: 'Dirección', value: contactInfo.address, href: `https://www.google.com/maps/search/?api=1&query=${mapsQuery}` },
 ]
 
 export function CtaFooter() {
@@ -24,7 +40,7 @@ export function CtaFooter() {
         <div className="relative mx-auto w-full max-w-6xl">
           <Reveal>
             <span className="font-display text-xs uppercase tracking-[0.3em] text-[var(--green-light)]">
-              (08) — Empecemos
+              (15) — Empecemos
             </span>
             <h2 className="mt-5 font-display text-[clamp(2.4rem,10vw,5rem)] font-semibold leading-[0.97] tracking-tight text-balance sm:text-6xl md:mt-6 md:text-8xl">
               Tu próximo proyecto<br className="hidden sm:block" /> empieza acá.
@@ -33,7 +49,7 @@ export function CtaFooter() {
 
           <Reveal delay={0.15}>
             <div className="mt-8 md:mt-10">
-              <MagneticButton href="https://wa.me/5490000000000" variant="light" className="px-7 py-4 text-sm sm:px-10 sm:py-5 sm:text-base">
+              <MagneticButton href={buildWhatsAppUrl(contactWaMessage)} variant="light" className="px-7 py-4 text-sm sm:px-10 sm:py-5 sm:text-base">
                 Solicitar presupuesto
                 <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </MagneticButton>
@@ -46,7 +62,7 @@ export function CtaFooter() {
               <motion.a
                 key={c.label}
                 href={c.href}
-                target={c.href.startsWith('http') ? '_blank' : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -62,6 +78,18 @@ export function CtaFooter() {
               </motion.a>
             ))}
           </div>
+
+          <Reveal delay={0.2} className="mt-4 sm:mt-5" blur={false}>
+            <div className="overflow-hidden rounded-2xl border border-white/15 sm:rounded-3xl">
+              <iframe
+                title="Ubicación de Cristalmat en el mapa"
+                src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
+                loading="lazy"
+                className="h-64 w-full grayscale invert sm:h-80"
+                style={{ border: 0 }}
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -76,16 +104,17 @@ export function CtaFooter() {
                 <span className="font-display text-xl font-semibold sm:text-2xl">Cristalmat</span>
               </div>
               <p className="mt-3 max-w-xs text-sm leading-relaxed text-background/60">
-                Fabricación propia de Garden Blocks, premoldeados y pisos drenantes para exteriores
-                que duran décadas.
+                Premoldeados de hormigón, pisos atérmicos y revestimientos para exteriores e
+                interiores.
               </p>
             </div>
 
             <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm sm:gap-x-8">
               {[
-                ['Beneficios', '#beneficios'],
+                ['Productos', '#productos'],
+                ['Garden Blocks', '#garden-blocks'],
                 ['Proyectos', '#proyectos'],
-                ['Proceso', '#proceso'],
+                ['Calculadora', '#calculadora'],
                 ['Nosotros', '#nosotros'],
                 ['FAQ', '#faq'],
                 ['Contacto', '#contacto'],
@@ -104,9 +133,8 @@ export function CtaFooter() {
           <div className="flex flex-col justify-between gap-4 pt-6 text-xs text-background/50 sm:pt-8 md:flex-row md:items-center">
             <p>© {new Date().getFullYear()} Cristalmat. Todos los derechos reservados.</p>
             <div className="flex gap-5 sm:gap-6">
-              <a href="https://wa.me/5490000000000" className="hover:text-background">WhatsApp</a>
-              <a href="#" className="hover:text-background">Instagram</a>
-              <a href="#" className="hover:text-background">Facebook</a>
+              <a href={buildWhatsAppUrl(contactWaMessage)} target="_blank" rel="noopener noreferrer" className="hover:text-background">WhatsApp</a>
+              <a href={contactInfo.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-background">Instagram</a>
             </div>
           </div>
         </div>
